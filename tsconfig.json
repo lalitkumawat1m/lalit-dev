@@ -20,12 +20,9 @@
     "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["./*"],
-      "types/*": [
-        "./@types/*"
-      ]
+      "types/*": ["./@types/*"]
     },
     "typeRoots": ["./node_modules/@types", "./@types/types.d.ts"]
-
   },
   "include": [
     "src/**/*.ts",
@@ -34,6 +31,7 @@
     "**/*.ts",
     "**/*.tsx",
     "./*.js",
-    "**/*.svg",],
+    "**/*.svg"
+  ],
   "exclude": ["node_modules"]
 }
