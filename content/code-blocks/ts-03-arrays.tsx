@@ -13,10 +13,11 @@ const inferredTypesArray = ['string', 'boolean', 'number'];
 // inferredTypesArray: string[]
 
 // You can use the `as const` keyword to specify types
-const inferredConstTypesArray = ['string', 'boolean', 'number'] as const;
+const inferredConstTypesArray = ['string', 'boolean', 'number'] ;
 // inferredConstTypesArray: readonly ["string", "boolean", "number"]
 
 // This will prevent any further Array manipulations
 // and make the Array immutable
 inferredConstTypesArray.push('object');
 /* Err: Property 'push' does not exist on type 'readonly ["string", "boolean", "number"]' */
+const modifiedArray = [...inferredConstTypesArray, 'object'];
