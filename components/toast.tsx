@@ -4,7 +4,7 @@ import {
   ExclamationCircleIcon,
   XMarkIcon,
 } from '@heroicons/react/24/solid';
-import produce from 'immer';
+import {produce} from 'immer';
 import {FC, Fragment} from 'react';
 import {create} from 'zustand';
 
