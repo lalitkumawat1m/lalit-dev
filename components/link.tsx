@@ -52,41 +52,39 @@ export const Link: FC<LinkProps> = ({
     [href, onClick]
   );
 
-  return (
-    <>
-      {href && !isExternalUrl(href) ? (
-        <NextLink
-          {...nextLinkProps}
-          href={
-            typeof href === 'string'
-              ? href.replace(/^\/products\//gi, '/')
-              : href
-          }
-        >
-          <a onClick={handleClick} {...AnchorProps}>
-            {children}
-          </a>
-        </NextLink>
-      ) : href ? (
-        <a
-          href={
-            typeof href === 'string'
-              ? href.replace(/^\/products\//gi, '/')
-              : href
-          }
-          rel={
-            AnchorProps?.target === '_blank' ? 'noopener noreferrer' : undefined
-          }
-          onClick={onClick}
-          {...AnchorProps}
-        >
-          {children}
-        </a>
-      ) : (
-        <span onClick={onClick} {...AnchorProps}>
-          {children}
-        </span>
-      )}
-    </>
-  );
+  return <>
+    {href && !isExternalUrl(href) ? (
+      (<NextLink
+        {...nextLinkProps}
+        href={
+          typeof href === 'string'
+            ? href.replace(/^\/products\//gi, '/')
+            : href
+        }
+        onClick={handleClick}>
+
+        {children}
+
+      </NextLink>)
+    ) : href ? (
+      <a
+        href={
+          typeof href === 'string'
+            ? href.replace(/^\/products\//gi, '/')
+            : href
+        }
+        rel={
+          AnchorProps?.target === '_blank' ? 'noopener noreferrer' : undefined
+        }
+        onClick={onClick}
+        {...AnchorProps}
+      >
+        {children}
+      </a>
+    ) : (
+      <span onClick={onClick} {...AnchorProps}>
+        {children}
+      </span>
+    )}
+  </>;
 };

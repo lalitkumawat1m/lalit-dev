@@ -4,7 +4,6 @@ const nextConfig = {
   experimental: {
     externalDir: true,
     images: {allowFutureImage: true},
-    newNextLinkBehavior: false,
   },
 };
 
